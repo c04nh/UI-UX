@@ -24,7 +24,8 @@ function displayItems() {
   document.getElementById("demo").innerHTML = "";
   for (i = 0; i < sessionStorage.length; i++) {
   x = sessionStorage.key(i);
-  document.getElementById("demo").innerHTML += x + "<br>";
+  y = sessionStorage.getItem(x);
+  document.getElementById("demo").innerHTML += x + " : " + y + "<br>";
   }
 }
 
