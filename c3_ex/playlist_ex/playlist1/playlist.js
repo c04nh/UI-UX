@@ -30,3 +30,7 @@ function handleButtonClick(e) {
 }
 
 	//추가1
+	
+	function handleButtonClick1(e){
+		removeAll();
+		}
