@@ -23,23 +23,26 @@ window.onload = function() {
 								["5:00pm", "9:00pm"]);
 	alert(forbiddenPlanetMovie.getNextShowing());
 
+	
+
 }
 
 function Movie(title, genre, rating, showtimes) {
 // 추가 함수만들기
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-
-
+	this.title = title;
+	this.genre = genre;
+	this.rating = rating;
+	this.showtimes = showtimes;
+	this.getNextShowing = function(){
+		var now = new Date().getTime();
+		for(var i = 0; i < this.showtimes.length; i++){
+			var showtime = getTimeFromString(this.showtimes[i]);
+			if((showtime - now) > 0){
+				return this.title + "의 다음 상영 시간은 " + this.showtimes[i] + "입니다.";
+			}
+		}
+		return null;
+	}
 }
 
 function getTimeFromString(str) {
